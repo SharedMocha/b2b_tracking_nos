@@ -13,7 +13,7 @@ Bugs : *******
 
 from boa.interop.Neo.Runtime import CheckWitness
 from boa.interop.Neo.Storage import GetContext, Put, Delete, Get
-import datetime
+#import datetime
 #from boa.builtins import concat
 
 
@@ -95,7 +95,7 @@ def Main(operation, args):
             #Register Asset for sending to customer.This is invoked for companies like Amazon to send a product to customer
             print('About to Register Asset for shipment')
             asset_exists = Get(GetContext(), case_id)
-            if not product_exists:
+            if not asset_exists:
                 status = "New"
                 Put(GetContext(), case_id,ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status)
                 print("Registered New Asset for shipment")
@@ -115,8 +115,8 @@ def Main(operation, args):
         print('Product Shipped to customer')
         if is_owner(shipping_company_depot_hash,case_id):
             status = "Delivered"
-            date_time_delivered = datetime.datetime.now()
-            Put(GetContext(), case_id,ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status,date_time_delivered)
+            #date_time_delivered = datetime.datetime.now()
+            Put(GetContext(), case_id,ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status)
             print("Product Delivered to customer")
             return True
         
