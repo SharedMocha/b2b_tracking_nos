@@ -1,4 +1,4 @@
-# b2b_tracking_nos
+# b2b_tracking_nos_smart_contract
 
 Usage:B2BTracking smart contract acts as base version to transfer asset (or) package information between various companies in a trusted way.
 As an example when a customer orders a product at Amazon the information is sent to warehouse or depot.
