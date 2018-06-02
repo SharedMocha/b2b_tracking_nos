@@ -2,7 +2,7 @@
 Developed by :SharedMocha
 Developed on :05/28/2018
 Code Reviewers : ******
-FileName:b2btracking.js
+FileName:smartcontract.py
 Usage:B2BTracking smart contract acts as base version to transfer asset (or) package information between various companies in a trusted way.
 As an example when a customer orders a product at Amazon the information is sent to warehouse or depot.
 The warehouse or depot then packages the product and hands the package to shipping company like Fedex which delivers it to customer.
