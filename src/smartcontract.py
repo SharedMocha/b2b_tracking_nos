@@ -2,7 +2,7 @@
 Developed by :SharedMocha
 Developed on :05/28/2018
 Code Reviewers : ******
-FileName:smartcontract.py
+FileName:sc.py
 Usage:B2BTracking smart contract acts as base version to transfer asset (or) package information between various companies in a trusted way.
 As an example when a customer orders a product at Amazon the information is sent to warehouse or depot.
 The warehouse or depot then packages the product and hands the package to shipping company like Fedex which delivers it to customer.
@@ -90,6 +90,7 @@ def Main(operation, args):
     customer_address = args[12]
     
     # start operations
+    #main code
     if operation != None:
         if operation == 'RegisterAsset':
             #Register Asset for sending to customer.This is invoked for companies like Amazon to send a product to customer
