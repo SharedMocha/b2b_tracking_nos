@@ -89,8 +89,6 @@ def Main(operation, args):
     customer_name = args[10]
     delivery_by = args[11]
     customer_address = args[12]
-
-
     # start operations
     #main code
     if operation != None:
