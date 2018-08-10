@@ -98,7 +98,8 @@ def Main(operation, args):
             asset_exists = Get(GetContext(), case_id)
             if not asset_exists:
                 status = "New"
-                Put(GetContext(), case_id,ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status)
+                arrayone = Serialize([ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_name,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status])
+                Put(GetContext(), case_id,arrayone)
                 print("Registered New Asset for shipment")
                 return True
 
