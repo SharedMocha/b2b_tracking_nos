@@ -129,6 +129,7 @@ def Main(operation, args):
     if operation == 'GetStatusOfShipment':
         #Shipping company like FedEx will update final status after product is delivered
         print('Get status of shipment')
+        status = ""
         status = Get(GetContext(), case_id)
         return status
     return False
