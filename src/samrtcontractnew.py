@@ -89,6 +89,7 @@ def Main(operation, args):
     customer_name = args[10]
     delivery_by = args[11]
     customer_address = args[12]
+    arraytostore = Serialize([ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_name,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by])
 
 
     # start operations
@@ -101,7 +102,7 @@ def Main(operation, args):
             if not asset_exists:
                 status = "New"
                 array = Serialize([ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_name,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status])
-                Put(GetContext(),case_id,array)
+                Put(GetContext(),case_id,arraytostore)
                 print("Registered New Asset for shipment")
                 return True
 
