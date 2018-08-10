@@ -11,8 +11,9 @@ Pending Items : ******
 Bugs : *******
 """
 
-from boa.interop.Neo.Runtime import CheckWitness
+from boa.interop.Neo.Runtime import CheckWitness,Serialize,Deserialize
 from boa.interop.Neo.Storage import GetContext, Put, Delete, Get
+
 #import datetime
 #from boa.builtins import concat
 
