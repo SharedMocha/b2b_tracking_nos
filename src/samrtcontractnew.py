@@ -88,7 +88,8 @@ def Main(operation, args):
     customer_name = args[10]
     delivery_by = args[11]
     customer_address = args[12]
-    
+
+
     # start operations
     #main code
     if operation != None:
@@ -98,7 +99,8 @@ def Main(operation, args):
             asset_exists = Get(GetContext(), case_id)
             if not asset_exists:
                 status = "New"
-                Put(GetContext(), case_id,ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status)
+                array = Serialize([ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_name,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status])
+                Put(GetContext(),case_id,array)
                 print("Registered New Asset for shipment")
                 return True
 
@@ -107,7 +109,8 @@ def Main(operation, args):
         print('Transfer Asset from Warehouse or Depot to Shipper like Fedex')
         if is_owner(shipping_company_depot_hash,case_id):
             status = "Transferred"
-            Put(GetContext(), case_id,ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status)
+            array = Serialize([ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_name,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status])
+            Put(GetContext(), case_id,array)
             print("Product Transferred to Shipper")
             return True
 
@@ -117,7 +120,8 @@ def Main(operation, args):
         if is_owner(shipping_company_depot_hash,case_id):
             status = "Delivered"
             #date_time_delivered = datetime.datetime.now()
-            Put(GetContext(), case_id,ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status)
+            array = Serialize([ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_name,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by,status])
+            Put(GetContext(),case_id,array)
             print("Product Delivered to customer")
             return True
         
