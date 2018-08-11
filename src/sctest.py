@@ -76,7 +76,7 @@ def Main(operation, args):
         print('All required parameters are passed')
     
     #Capture param values
-    case_id = args[1]
+    case_id = 78
     ordered_by_name = args[2]
     orderedby_company_hash = args[3]
     shipping_company_depot_code = args[4]
