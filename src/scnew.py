@@ -62,13 +62,10 @@ def Main(operation, args):
 
     #Check if requestor is  valid
     print("88888888888888888888888888888888888888888")
-    requestor_hash = args[0]
-    authorized_requestor = CheckWitness(requestor_hash)
+    #requestor_hash = args[0]
+    #authorized_requestor = CheckWitness(requestor_hash)
     print("999999999999999999999999999999999999")
-    if not authorized_requestor:
-        print("Requestor is Not Authorized")
-        return False
-    print("Requestor is Authorized")
+
     
     #Check if required params are present-Always accept all 14 params
     if len(args) < 13:
@@ -90,6 +87,7 @@ def Main(operation, args):
     customer_name = args[10]
     delivery_by = args[11]
     customer_address = args[12]
+    print("77777777777777777777777777777777777777")
 
     # start operations
     #main code
@@ -97,6 +95,7 @@ def Main(operation, args):
         if operation == 'RegisterAsset':
             #Register Asset for sending to customer.This is invoked for companies like Amazon to send a product to customer
             print('About to Register Asset for shipment')
+            print("666666666666666666666666666666666666666")
             asset_exists = Get(GetContext(), case_id)
             if not asset_exists:
                 status = "New"
