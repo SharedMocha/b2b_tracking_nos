@@ -61,8 +61,10 @@ def Main(operation, args):
     """
 
     #Check if requestor is  valid
+    print("88888888888888888888888888888888888888888")
     requestor_hash = args[0]
     authorized_requestor = CheckWitness(requestor_hash)
+    print("999999999999999999999999999999999999")
     if not authorized_requestor:
         print("Requestor is Not Authorized")
         return False
