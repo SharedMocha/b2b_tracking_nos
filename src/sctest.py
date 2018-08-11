@@ -62,6 +62,7 @@ def Main(operation, args):
 
     #Check if requestor is  valid
     requestor_hash = args[0]
+    key = 123
     authorized_requestor = CheckWitness(requestor_hash)
     if not authorized_requestor:
         print("Requestor is Not Authorized")
@@ -99,7 +100,7 @@ def Main(operation, args):
             asset_exists = Get(GetContext(), case_id)
             if not asset_exists:
                 status = "New"
-                Put(GetContext(), "121",arrayone)
+                Put(GetContext(), key,arrayone)
                 print("Registered New Asset for shipment")
                 return True
 
