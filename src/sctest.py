@@ -76,7 +76,7 @@ def Main(operation, args):
         print('All required parameters are passed')
     
     #Capture param values
-    case_id = 78
+    case_id = args[1]
     ordered_by_name = args[2]
     orderedby_company_hash = args[3]
     shipping_company_depot_code = args[4]
@@ -99,7 +99,7 @@ def Main(operation, args):
             asset_exists = Get(GetContext(), case_id)
             if not asset_exists:
                 status = "New"
-                Put(GetContext(), case_id,arrayone)
+                Put(GetContext(), 121,arrayone)
                 print("Registered New Asset for shipment")
                 return True
 
