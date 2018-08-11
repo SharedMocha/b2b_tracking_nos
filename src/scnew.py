@@ -101,7 +101,11 @@ def Main(operation, args):
                 status = "New"
                 print("111111111111111111111111111111111111")
                 print(case_id)
-                Put(GetContext(), case_id,case_id)
+                print("888888888666666666667777777777777777")
+                arrayone = Serialize([ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_name,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by])
+                print(case_id)
+                print("7878787878787878788888888")
+                Put(GetContext(), case_id,arrayone)
                 print("Registered New Asset for shipment")
                 print("22222222222222222222222222222")
                 return True
