@@ -99,8 +99,12 @@ def Main(operation, args):
             asset_exists = Get(GetContext(), case_id)
             if not asset_exists:
                 status = "New"
+                print("111111111111111111111111111111111111")
+                print(arrayone)
+                print(case_id)
                 Put(GetContext(), case_id,arrayone)
                 print("Registered New Asset for shipment")
+                print("22222222222222222222222222222")
                 return True
 
     if operation == 'TransferAssetToShipper':
