@@ -90,7 +90,6 @@ def Main(operation, args):
     customer_name = args[10]
     delivery_by = args[11]
     customer_address = args[12]
-    arrayone = Serialize([ordered_by_name,orderedby_company_hash,shipping_company_depot_code,shipping_company_depot_hash,carrier_name,carrier_company_hash,product_id,quantity,customer_name,customer_address,delivery_by])
 
     # start operations
     #main code
@@ -102,7 +101,6 @@ def Main(operation, args):
             if not asset_exists:
                 status = "New"
                 print("111111111111111111111111111111111111")
-                print(arrayone)
                 print(case_id)
                 Put(GetContext(), case_id,case_id)
                 print("Registered New Asset for shipment")
@@ -114,7 +112,7 @@ def Main(operation, args):
         print('Transfer Asset from Warehouse or Depot to Shipper like Fedex')
         if is_owner(shipping_company_depot_hash,case_id):
             status = "Transferred"
-            Put(GetContext(), case_id,arrayone)
+            Put(GetContext(), case_id,case_id)
             print("Product Transferred to Shipper")
             return True
 
@@ -125,7 +123,7 @@ def Main(operation, args):
             status = "Delivered"
             #date_time_delivered = datetime.datetime.now()
             print("Product Delivered to customer")
-            Put(GetContext(), case_id,arrayone)
+            Put(GetContext(), case_id,case_id)
             return True
         
     if operation == 'GetStatusOfShipment':
