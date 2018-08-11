@@ -102,7 +102,7 @@ def Main(operation, args):
                 print("111111111111111111111111111111111111")
                 print(arrayone)
                 print(case_id)
-                Put(GetContext(), case_id,arrayone)
+                Put(GetContext(), case_id,case_id)
                 print("Registered New Asset for shipment")
                 print("22222222222222222222222222222")
                 return True
