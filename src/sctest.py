@@ -99,7 +99,7 @@ def Main(operation, args):
             asset_exists = Get(GetContext(), case_id)
             if not asset_exists:
                 status = "New"
-                Put(GetContext(), 121,arrayone)
+                Put(GetContext(), "121",arrayone)
                 print("Registered New Asset for shipment")
                 return True
 
